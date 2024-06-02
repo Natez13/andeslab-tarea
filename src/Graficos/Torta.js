@@ -30,7 +30,7 @@ const TodoPieChart = () => {
   const COLORS = ['#0088FE', '#FF8042'];
 
   return (
-    <div style={{marginLeft: "0rem"}}>
+    <div className="pie-chart-container">
       <PieChart width={400} height={400}       
       margin={{
         top: 20, right: 30, left: 20, bottom: 5,
@@ -49,7 +49,7 @@ const TodoPieChart = () => {
           ))}
         </Pie>
         <Tooltip />
-        <Legend />
+        <Legend align="center" marginLeft ="40px" /> {/* Ajusta la leyenda */}
       </PieChart>
     </div>
   );

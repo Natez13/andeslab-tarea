@@ -1,19 +1,22 @@
 import ChartComponent from '../Graficos/Barras';
 import TodoPieChart from '../Graficos/Torta';
-import '../App.css';
-import { Routes, Route } from 'react-router-dom';
-import Home from './Home';
+import '../Css/Graficos.css'; // Importa un archivo CSS para los estilos
 
 const Graficos = () => {
   return (
-    <div className="App-header">
-    <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-      <h1>Gráfico de Usuarios Barras</h1>
-        <ChartComponent />
-        <h1>Gráfico de Usuarios Torta</h1>
-        <TodoPieChart  />
+    <div className="row">
+      <div className="col-md-6 d-flex align-items-center justify-content-center"> {/* Centra el contenido horizontal y verticalmente */}
+        <div className="grafico-container"> {/* Contenedor con estilos personalizados */}
+          <h1 className="text-center">Gráfico de Usuarios Barras</h1>
+          <ChartComponent />
+        </div>
+      </div>
+      <div className="col-md-6 d-flex align-items-center justify-content-center"> {/* Centra el contenido horizontal y verticalmente */}
+        <div className="grafico-container"> {/* Contenedor con estilos personalizados */}
+          <h1 className="text-center">Gráfico de Usuarios Torta</h1>
+          <TodoPieChart />
+        </div>
+      </div>
     </div>
   );
 };

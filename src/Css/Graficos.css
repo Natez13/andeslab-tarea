@@ -1,0 +1,44 @@
+.grafico-container {
+    background-color: #364350; /* Fondo blanco grisáceo */
+    border: 1px solid #2f363d; /* Borde delgado */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin-bottom: 20px; /* Margen inferior para separar los gráficos */
+    width: 100%; /* Establece un tamaño fijo */
+    height: 58vh; /* Establece un tamaño fijo */
+    max-width: 800px; /* Limita el ancho máximo para evitar que el contenedor se extienda demasiado */
+  }
+
+  .pie-chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .recharts-legend-wrapper {
+    margin-left: 2vh; /* Ajusta el margen izquierdo según sea necesario */
+    margin-bottom: -1vh;
+  }
+  
+  .chart-container {
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .chart-container {
+      width: 100%;
+      overflow-x: auto; /* Agrega scroll horizontal si es necesario */
+    }
+  }
+  
+  #customButton.btn-custom {
+    background-color: #2e8b57; /* Azul verdoso oscuro */
+    border-color: #2e8b57;
+  }
+  
+  #customButton.btn-custom:hover {
+    background-color: #255c41; /* Color oscuro al pasar el ratón */
+    border-color: #255c41;
+  }
+  
+  
