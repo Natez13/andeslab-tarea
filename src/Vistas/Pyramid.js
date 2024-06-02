@@ -1,60 +1,65 @@
 import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
+
 
 const Pyramid = () => {
   const containerRef = useRef();
   const rendererRef = useRef(null); // Mantener una referencia al renderer
   const [modo3D, setModo3D] = useState(true);
   const [modoAnim, setmodoAnim] = useState(true);
-  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  const [controll3d, setcontroll3d] = useState(null);
 
-  const scene = new THREE.Scene();
-  var camera = useRef(new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000));
-  var animater = useRef(true)
-  // Piramide
-  const geometry = new THREE.ConeGeometry(1, 2, 4);
-  const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-  const pyramid = new THREE.Mesh(geometry, material);
-  pyramid.position.set(0, 1, 0);
-  scene.add(pyramid);
+  let camera = useRef(new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000));
+  let animater = useRef(true)
   const animateId = useRef(null);
-  const controls = useRef(new OrbitControls(camera.current, renderer.domElement));
-
-  var animate = () => {
-    
-    if(animater.current){
-    animateId.current = requestAnimationFrame(animate);
-    pyramid.rotation.y += 0.01;
-    //console.log("Anime1 ")
-    }
-    else{
-      animateId.current = requestAnimationFrame(animate);
-      pyramid.rotation.y = 0.00;
-      //console.log("Anime2 ")
-    }
-    renderer.render(scene, camera.current);
-  };
-
-  const ReonWindowResize = () => {
-    const width = containerRef.current.clientWidth;
-    const height = containerRef.current.clientHeight;
-  
-    camera.current.aspect = width / height;
-    camera.current.updateProjectionMatrix();
-    renderer.setSize(width, height);
-  };
 
   useEffect(() => {
     
     camera.current.position.set(0, 1.3, 4);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    let controls = new OrbitControls(camera.current, renderer.domElement)
+    
 
-    const onWindowResize = () => {
-      camera.current.aspect = window.innerWidth / window.innerHeight;
+    const scene = new THREE.Scene();
+    
+    // Piramide
+    const geometry = new THREE.ConeGeometry(1, 2, 4);
+    const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+    const pyramid = new THREE.Mesh(geometry, material);
+    pyramid.position.set(0, 1, 0);
+    scene.add(pyramid);
+    
+    
+
+    var animate = () => {
+      
+      if(animater.current){
+      animateId.current = requestAnimationFrame(animate);
+      pyramid.rotation.y += 0.01;
+      //console.log("Anime1 ")
+      }
+      else{
+        animateId.current = requestAnimationFrame(animate);
+        pyramid.rotation.y = 0.00;
+        //console.log("Anime2 ")
+      }
+      renderer.render(scene, camera.current);
+    };
+
+    const ReonWindowResize = () => {
+      const width = containerRef.current.clientWidth;
+      const height = containerRef.current.clientHeight;
+    
+      camera.current.aspect = width / height;
       camera.current.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    }
+      renderer.setSize(width, height);
+    };
+      const onWindowResize = () => {
+        camera.current.aspect = window.innerWidth / window.innerHeight;
+        camera.current.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
 
     
     renderer.shadowMap.enabled = true;
@@ -111,8 +116,9 @@ const Pyramid = () => {
 
     // Controls
      
-     controls.current.target.set(0, 0, 0);
-     controls.current.update();
+     controls.target.set(0, 0, 0);
+     controls.update();
+     setcontroll3d(controls)
 
     // GUI
 
@@ -129,7 +135,7 @@ const Pyramid = () => {
   }, []);
 
   const cambiarModo = () => {
-    console.log("controls.current.enabled= ",controls.current.enabled);
+    console.log("controls.enabled= ",controll3d.enabled);
     setModo3D(!modo3D);
     //console.log(animater.current)
     console.log(modo3D)
@@ -141,9 +147,9 @@ const Pyramid = () => {
           setmodoAnim(false)
           animater.current = false
           
-          controls.current.enabled = false;
-          controls.current.update();
-          console.log("controls.current.enabled= ",controls.current.enabled);
+          controll3d.enabled = false;
+          controll3d.update();
+          console.log("controls.enabled= ",controll3d.enabled);
       } else {
           console.log("Set 3D")
           //console.log(camera.current.position)
@@ -151,9 +157,9 @@ const Pyramid = () => {
           //console.log(camera.current.position)
           setmodoAnim(true)
           animater.current = true
-          controls.current.enabled = true;
-          controls.current.update();
-          console.log("controls.current.enabled= ",controls.current.enabled);
+          controll3d.enabled = true;
+          controll3d.update();
+          console.log("controls.enabled= ",controll3d.enabled);
         
       }
       console.log(animater.current)
