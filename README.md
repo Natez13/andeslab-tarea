@@ -15,6 +15,6 @@ Para poder Correr el programa:
 
 La Aplicacion deberia estar lista . Abir [http://localhost:3000](http://localhost:3000).
 
-Ejemplo de mensaje exito de Ejecucion
+### Ejemplo de mensaje exito de Ejecucion
 ![image](https://github.com/Natez13/andeslab-tarea/assets/70248621/46ff8700-d4b1-401f-8121-367c35733f60)
 
