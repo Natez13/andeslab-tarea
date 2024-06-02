@@ -3,7 +3,7 @@
 
 https://andeslab-tarea.vercel.app
 
-## Available Scripts
+## Ejecucion
 
 Para poder Correr el programa:
 
@@ -13,16 +13,8 @@ Para poder Correr el programa:
 
 ### Ejecutar `npm install` dentro de la carpeta del proyecto luego `npm start`
 
-La Aplicacion deberia estar lista . Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+La Aplicacion deberia estar lista . Abir [http://localhost:3000](http://localhost:3000).
 
-The page will reload when you make changes. You may also see any lint errors in the console.
+Ejemplo de mensaje exito de Ejecucion
+![image](https://github.com/Natez13/andeslab-tarea/assets/70248621/46ff8700-d4b1-401f-8121-367c35733f60)
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.
-
-It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
