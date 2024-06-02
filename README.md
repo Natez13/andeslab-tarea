@@ -1,31 +1,20 @@
-# Create React App
 
-This directory is a brief example of a [Create React App](https://github.com/facebook/create-react-app) site that can be deployed to Vercel with zero configuration.
+## Aplicacion en Deploy
 
-## Deploy Your Own
+https://andeslab-tarea.vercel.app
 
-Deploy your own Create React App project with Vercel.
+## Ejecucion
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/create-react-app&template=create-react-app)
+Para poder Correr el programa:
 
-_Live Example: https://create-react-template.vercel.app/_
+### Instalar [React JS](https://www.freecodecamp.org/news/how-to-install-react-a-step-by-step-guide/)
 
-## Available Scripts
+### Clonar/Desacargar el Proyecto
 
-In the project directory, you can run:
+### Ejecutar `npm install` dentro de la carpeta del proyecto luego `npm start`
 
-### `npm start`
+La Aplicacion deberia estar lista . Abir [http://localhost:3000](http://localhost:3000).
 
-Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Ejemplo de mensaje exito de Ejecucion
+![image](https://github.com/Natez13/andeslab-tarea/assets/70248621/46ff8700-d4b1-401f-8121-367c35733f60)
 
-The page will reload when you make changes. You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.
-
-It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
